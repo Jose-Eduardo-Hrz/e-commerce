@@ -7,17 +7,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="/Todo">Todo</a>
+            <a class="nav-link" href="/categoria/1">Electronica</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Electronica">Electronica</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Papeleria">Papeleria</a>
+            <a class="nav-link" href="/categoria/2">Papeleria</a>
           </li>
         </ul>
         <form class="d-flex" action="/buscar/">
-          <input class="form-control me-2" type="search" placeholder="Buscar Articulo" aria-label="Search">
+          <input class="form-control me-2" type="search" placeholder="Buscar Articulo" aria-label="Search" name="nombre">
           <button class="btn btn-outline-success" type="submit">Buscar</button>
         </form>
       </div>

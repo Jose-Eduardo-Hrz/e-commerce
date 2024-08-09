@@ -30,5 +30,6 @@ model Producto {
 
 model Pagina {
   id Int @id @default(autoincrement())
+  nombre String
   visitas Int @default(0)
 }
