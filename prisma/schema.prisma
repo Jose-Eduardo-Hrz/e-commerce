@@ -14,7 +14,7 @@ model Categoria {
   id Int @id @default(autoincrement())
   nombre String
   productos Producto[]
-  visitas Int @default(0)
+  paginas Pagina[]
 }
 
 model Producto {
@@ -31,5 +31,7 @@ model Producto {
 model Pagina {
   id Int @id @default(autoincrement())
   nombre String
+  categoria Categoria @relation( fields: [categoriaId], references: [id] )
+  categoriaId Int
   visitas Int @default(0)
 }

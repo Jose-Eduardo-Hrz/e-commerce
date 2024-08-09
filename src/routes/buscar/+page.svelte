@@ -4,11 +4,13 @@
 </script>
 
 <div class="container contenido p-5">
-
-    {#each data.productos as producto }
-        <Tarjeta {...producto} />
-    {/each}
-
+    {#if data.productos.length > 0}
+        {#each data.productos as producto}
+            <Tarjeta {...producto} />
+        {/each}
+    {:else}
+        <h1>No hay productos para mostrar</h1>
+    {/if}
 </div>
 
 <style>
