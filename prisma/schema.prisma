@@ -11,32 +11,67 @@ datasource db {
 }
 
 model Categoria {
-  id Int @id @default(autoincrement())
-  nombre String @unique
-  visitas Int @default(0)
+  id             Int               @id @default(autoincrement())
+  nombre         String            @unique
+  productos      Producto[]
+  vistaCategoria VisitaCategoria[]
+}
+
+model Transaccion {
+  id        Int        @id @default(autoincrement())
+  nombre    String     @unique
   productos Producto[]
 }
 
-model Producto {
-  id Int @id @default(autoincrement())
-  nombre String
-  precio Float 
-  inversion Float
-  imagen String
-  categoria Categoria @relation( fields: [idCategoria], references: [id] )
-  idCategoria Int
-  visitas Int @default(0)
-  solicitados Int @default(0)
+model Fecha {
+  id              Int               @id @default(autoincrement())
+  fecha           String            @unique
+  visitaGeneral   VisitaGeneral[]
+  visitaCategoria VisitaCategoria[]
+  vistaProducto VistaProducto[]
 }
 
-model Visitas {
-  id Int @id @default(autoincrement())
-  fecha DateTime @unique
-  numero Int @default(0)
+model Producto {
+  id            Int         @id @default(autoincrement())
+  nombre        String
+  precio        Float
+  inversion     Float
+  imagen        String
+  categoria     Categoria   @relation(fields: [idCategoria], references: [id])
+  idCategoria   Int
+  transaccion   Transaccion @relation(fields: [idTransaccion], references: [id])
+  idTransaccion Int
+  vistasProducto VistaProducto[]
+}
+
+model VisitaGeneral {
+  id      Int   @id @default(autoincrement())
+  vistas  Int   @default(0)
+  fecha   Fecha @relation(fields: [idFecha], references: [id])
+  idFecha Int   @unique
+}
+
+model VisitaCategoria {
+  id          Int       @id @default(autoincrement())
+  vistas      Int       @default(0)
+  categoria   Categoria @relation(fields: [idCategoria], references: [id])
+  idCategoria Int
+  fecha       Fecha     @relation(fields: [idFecha], references: [id])
+  idFecha     Int
+}
+
+model VistaProducto {
+  id          Int       @id @default(autoincrement())
+  vistas      Int       @default(0)
+  solicitados      Int       @default(0)
+  producto       Producto     @relation(fields: [idProducto], references: [id])
+  idProducto     Int
+  fecha       Fecha     @relation(fields: [idFecha], references: [id])
+  idFecha     Int
 }
 
 model Busqueda {
-  id Int @id @default(autoincrement())
-  palabra String @unique
-  solicitado Int @default(1)
+  id         Int    @id @default(autoincrement())
+  palabra    String @unique
+  solicitado Int    @default(1)
 }

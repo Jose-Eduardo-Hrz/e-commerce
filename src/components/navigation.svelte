@@ -7,10 +7,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="/categoria/1">Electronica</a>
+            <a class="nav-link" href="/categoria/1" data-sveltekit-preload-data="tap">Electronica</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/categoria/2">Papeleria</a>
+            <a class="nav-link" href="/categoria/2" data-sveltekit-preload-data="tap">Papeleria</a>
           </li>
         </ul>
         <form class="d-flex" action="/buscar/">
