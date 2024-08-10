@@ -1,6 +1,7 @@
 <script>
     import Tarjeta from "../components/Tarjeta.svelte";
     export let data;
+    
 </script>
 
 <div class="container contenido p-5">

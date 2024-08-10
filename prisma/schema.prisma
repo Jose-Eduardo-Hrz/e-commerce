@@ -12,26 +12,31 @@ datasource db {
 
 model Categoria {
   id Int @id @default(autoincrement())
-  nombre String
+  nombre String @unique
+  visitas Int @default(0)
   productos Producto[]
-  paginas Pagina[]
 }
 
 model Producto {
   id Int @id @default(autoincrement())
   nombre String
   precio Float 
+  inversion Float
   imagen String
-  categoria Categoria @relation( fields: [categoriaId], references: [id] )
-  categoriaId Int
+  categoria Categoria @relation( fields: [idCategoria], references: [id] )
+  idCategoria Int
   visitas Int @default(0)
   solicitados Int @default(0)
 }
 
-model Pagina {
+model Visitas {
   id Int @id @default(autoincrement())
-  nombre String
-  categoria Categoria @relation( fields: [categoriaId], references: [id] )
-  categoriaId Int
-  visitas Int @default(0)
+  fecha DateTime @unique
+  numero Int @default(0)
+}
+
+model Busqueda {
+  id Int @id @default(autoincrement())
+  palabra String @unique
+  solicitado Int @default(1)
 }

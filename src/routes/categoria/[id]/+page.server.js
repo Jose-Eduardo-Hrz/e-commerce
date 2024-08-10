@@ -10,12 +10,9 @@ export async function load({ params }) {
         where : { id : Number.parseInt(id) } , select : { id : true , nombre : true }
     })
     if( !categoria?.id && !categoria?.nombre ) return redirect( 302 , '/' )  
-    await prisma.pagina.update({
-        where : { id : categoria.id }, data : { visitas : { increment : 1 } }
-    })
     const productos = await prisma.producto.findMany({
         select : { id : true , imagen : true , nombre : true , precio : true , categoria : { select : { nombre : true } } },
-        where : { categoriaId : categoria.id }
+        where : { idCategoria : categoria.id }
     })
     return {
         productos
