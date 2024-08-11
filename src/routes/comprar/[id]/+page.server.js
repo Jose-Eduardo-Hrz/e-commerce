@@ -49,5 +49,5 @@ export async function load({ params, cookies }) {
         where : { id : visitaProductos.id },
         data : { solicitados : { increment : 1 } }
     })
-    return {  }
+    return { producto }
 }

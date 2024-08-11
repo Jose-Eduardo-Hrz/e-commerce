@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     export let id
     export let imagen
     export let nombre
