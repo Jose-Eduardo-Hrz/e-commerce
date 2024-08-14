@@ -2,4 +2,4 @@
     export let data
 </script>
 
-<h1>Error 404</h1>
+Test

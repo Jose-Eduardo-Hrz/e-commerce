@@ -1,5 +1,7 @@
 <script>
     export let data;
+    console.log( data.producto );
+    
 </script>
 
 <div class="container contenido p-5">
@@ -14,7 +16,13 @@
             <span>$ { data.producto?.precio.toPrecision(3) }</span>
         </div>
         <div>
-            <a href="/comprar/{data.producto?.id}" class="btn-com" data-sveltekit-preload-data="tap">Comprar Producto</a>
+            <a href="/comprar/{data.producto?.id}" class="btn-com" data-sveltekit-preload-data="tap">
+                {#if data.producto.idTransaccion == 1 }
+                    Comprar Producto
+                {:else}
+                    Solicitar Renta
+                {/if}
+            </a>
         </div>
     </div>
 </div>

@@ -49,13 +49,13 @@ export async function load({ params, cookies }) {
             where: { idCategoria: categoria.id }
         })
         return {
-            productos
+            productos , categoria
         }
     } catch (error) {
         console.log( error );
         
         return {
-            productos : []
+            productos : [],
         }
     }
 }

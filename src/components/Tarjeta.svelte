@@ -6,7 +6,7 @@
     export let categoria
 </script>
 
-<a class="columna" href="/producto/{id}" data-sveltekit-preload-data="tap">
+<a class="columna Efecto_Vertical" href="/producto/{id}" data-sveltekit-preload-data="tap">
     <div class="sec-img">
         <img src={imagen} alt="" class="img" />
     </div>

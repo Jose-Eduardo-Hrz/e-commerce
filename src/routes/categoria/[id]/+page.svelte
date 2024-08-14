@@ -1,7 +1,13 @@
 <script>
     import Tarjeta from "../../../components/Tarjeta.svelte";
     export let data
+    console.log( data.categoria );
+    
 </script>
+
+<svelte:head>
+	<title>{data.categoria?.nombre}</title>
+</svelte:head>
 
 <div class="container contenido p-5">
     {#if data.productos.length > 0}

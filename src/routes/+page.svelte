@@ -4,6 +4,10 @@
     
 </script>
 
+<svelte:head>
+	<title>Principal</title>
+</svelte:head>
+
 <div class="container contenido p-5">
     {#if data.productos.length > 0}
         {#each data.productos as producto}

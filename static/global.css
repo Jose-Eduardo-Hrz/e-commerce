@@ -1,3 +1,25 @@
 :root {
     --bg-color: #f7f7f7;
 }
+
+.Efecto_Vertical {
+    view-timeline-name: --efecto-vertical;
+    view-timeline-axis: block;
+
+    animation-timeline: --efecto-vertical;
+    animation-name: efectoVertical;
+
+    animation-range: entry 15% cover 50%;
+    animation-fill-mode: both;
+}
+
+@keyframes efectoVertical {
+    from {
+        opacity: 0;
+        transform: translate(0px, 100px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}

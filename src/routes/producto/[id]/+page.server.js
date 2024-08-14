@@ -7,8 +7,9 @@ export async function load({ params, cookies }) {
     const { id } = params
     const producto = await prisma.producto.findUnique({
         where: { id: Number.parseInt(id) },
-        select: { id: true, imagen: true, nombre: true, precio: true, categoria: { select: { nombre: true } } }
-    })
+        select: {
+            id: true, imagen: true, nombre: true, precio: true, categoria: { select: { nombre: true } }, idTransaccion: true
+        }})
     if (!producto) return redirect(302, '/')
     const fecha = await prisma.fecha.upsert({
         where: { fecha: (new Date).toLocaleDateString() },
@@ -25,22 +26,22 @@ export async function load({ params, cookies }) {
     }
     let productos = JSON.parse(cookies.get("visitaProductos") || "[]")
     let visitaProductos = await prisma.vistaProducto.findFirst({
-        where : { idProducto : producto.id , idFecha : fecha.id }
+        where: { idProducto: producto.id, idFecha: fecha.id }
     })
-    if( !visitaProductos ){
+    if (!visitaProductos) {
         visitaProductos = await prisma.vistaProducto.create({
-            data : { idProducto : producto.id , idFecha : fecha.id }
+            data: { idProducto: producto.id, idFecha: fecha.id }
         })
     }
-    if( !productos ){
+    if (!productos) {
         cookies.set("visitaProductos", JSON.stringify(productos), { path: "/" })
     }
     if (!productos.includes(producto.id)) {
         productos.push(producto.id);
         cookies.set("visitaProductos", JSON.stringify(productos), { path: "/" })
         await prisma.vistaProducto.update({
-            where : { id : visitaProductos.id },
-            data : { vistas : { increment : 1 } }
+            where: { id: visitaProductos.id },
+            data: { vistas: { increment: 1 } }
         })
     }
 
