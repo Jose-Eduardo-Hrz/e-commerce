@@ -45,9 +45,17 @@ export async function load({ params, cookies }) {
             data: { idProducto: producto.id, idFecha: fecha.id }
         })
     }
-    await prisma.vistaProducto.update({
-        where : { id : visitaProductos.id },
-        data : { solicitados : { increment : 1 } }
-    })
+    let solicitados = JSON.parse(cookies.get("solicitados") || "[]")
+    if (!solicitados) {
+        cookies.set("solicitados", JSON.stringify(solicitados), { path: "/" })
+    }
+    if (!solicitados.includes(producto.id)) {
+        solicitados.push(producto.id)
+        cookies.set("solicitados", JSON.stringify(solicitados), { path: "/" })
+        await prisma.vistaProducto.update({
+            where: { id: visitaProductos.id },
+            data : { solicitados : { increment : 1 } }
+        })
+    }
     return { producto }
 }

@@ -1,7 +1,5 @@
 <script>
     export let data;
-    console.log( data.producto );
-    
 </script>
 
 <div class="container contenido p-5">
