@@ -14,6 +14,9 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
+            <a class="nav-link" href="/" data-sveltekit-preload-data="tap">Inicio</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/categoria/1" data-sveltekit-preload-data="tap">Electronica</a>
           </li>
           <li class="nav-item">
@@ -21,6 +24,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/categoria/3" data-sveltekit-preload-data="tap">Protección</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link" href="/categoria/4" data-sveltekit-preload-data="tap">Paquetes</a>
           </li>
         </ul>
         <form class="d-flex" action="/buscar/">
@@ -33,6 +39,9 @@
 
   <style>
     nav {
-        background-color: var(--bg-color);
+      font-family: "Merriweather", serif;
+      font-size: 18px;
+      border-bottom: 1px solid #d4d4d4;
     }
+
   </style>
