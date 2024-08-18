@@ -46,7 +46,7 @@ model Producto {
 
 model VisitaGeneral {
   id      Int   @id @default(autoincrement())
-  vistas  Int   @default(0)
+  vistas  Int   @default(1)
   fecha   Fecha @relation(fields: [idFecha], references: [id])
   idFecha Int   @unique
 }

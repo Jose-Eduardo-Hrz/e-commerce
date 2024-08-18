@@ -70,8 +70,8 @@
                         <td>{id}</td>
                         <td>{fecha.fecha}</td>
                         <td>{producto.nombre}</td>
-                        <td>{vistas}</td>
                         <td>{solicitados}</td>
+                        <td>{vistas}</td>
                     </tr>
                 {/each}
             </tbody>

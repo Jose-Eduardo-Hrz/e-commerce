@@ -12,14 +12,10 @@ export async function load({ params, cookies }) {
     //     ]
     // })
 
-    // await prisma.producto.update({
-    //     where : { id : 48 },
-    //     data : { idCategoria : 4 }
-    // })
+    await prisma.visitaCategoria.deleteMany()
+    await prisma.visitaGeneral.deleteMany()
+    await prisma.vistaProducto.deleteMany()
 
-    // await prisma.producto.update({
-    //     where : { id : 49 },
-    //     data : { idCategoria : 4 }
-    // })
+    await prisma.fecha.deleteMany()
 
 }
