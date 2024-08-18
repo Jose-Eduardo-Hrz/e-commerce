@@ -6,9 +6,20 @@ export async function load({ params, cookies }) {
 
     // await prisma.producto.createMany({
     //     data : [
-    //         { nombre : "Bata" , inversion : 0 , precio : 15 , imagen : "https://www.uniformesamarillouno.com/escolares/wp-content/uploads/Bata_Laboratorio_486b995f49ad0.png" , idCategoria : 3 , idTransaccion : 2 },
-    //         { nombre : "Calculadora " , inversion : 0 , precio : 15 , imagen : "https://images.squarespace-cdn.com/content/v1/58597a19e58c62ba7fa48bf9/1548264524690-ZOM6EPP0KRFUHGJ5X3QT/6.png" , idCategoria : 1 , idTransaccion : 2 },
+    //         { nombre : "Paquete de Electronica" , inversion : 0 , precio : 0 , imagen : "https://m.media-amazon.com/images/I/71VtqtikOqL._AC_SY450_.jpg" , idCategoria : 4 , idTransaccion : 1 },
+    //         { nombre : "Paquete de Papeleria" , inversion : 0 , precio : 0 , imagen : "https://cadtoner.com.mx/16584-large_default/paquete-escolar-c12-articulos.jpg" , idCategoria : 2 , idTransaccion : 1 },
+    //         { nombre : "Paquete de Diseño" , inversion : 0 , precio : 0 , imagen : "https://m.media-amazon.com/images/I/81G8WzKf4JL._AC_SY450_.jpg" , idCategoria : 2 , idTransaccion : 1 },
     //     ]
+    // })
+
+    // await prisma.producto.update({
+    //     where : { id : 48 },
+    //     data : { idCategoria : 4 }
+    // })
+
+    // await prisma.producto.update({
+    //     where : { id : 49 },
+    //     data : { idCategoria : 4 }
     // })
 
 }

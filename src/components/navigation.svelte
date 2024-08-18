@@ -23,7 +23,7 @@
             <a class="nav-link" href="/categoria/2" data-sveltekit-preload-data="tap">Papeleria</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/categoria/3" data-sveltekit-preload-data="tap">Protección</a>
+            <a class="nav-link" href="/categoria/3" data-sveltekit-preload-data="tap">Laboratorio</a>
           </li>          
           <li class="nav-item">
             <a class="nav-link" href="/categoria/4" data-sveltekit-preload-data="tap">Paquetes</a>

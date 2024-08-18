@@ -40,7 +40,7 @@
         justify-content: center;
         align-items: center;
         padding: 120px 0px;
-        color: var(--bg-color);
+        color: #555;
         gap: 15px;
     }
 
