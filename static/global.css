@@ -48,3 +48,19 @@
         transform: translate(0px, 0px);
     }
 }
+
+/* Estilo para pantallas mayores a 1200px */
+@media screen and (min-width: 1200px) {
+    .contenedor_adaptable {
+        width: 1100px;
+        margin: auto;
+    }
+}
+
+/* Estilo para pantallas menores a 1200px */
+@media screen and (max-width: 1200px) {
+    .contenedor_adaptable {
+        width: 90%;
+        margin: auto;
+    }
+}

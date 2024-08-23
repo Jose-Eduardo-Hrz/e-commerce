@@ -1,7 +1,6 @@
 <script>
     import Tarjeta from "../../../components/Tarjeta.svelte";
     export let data
-    console.log( data.categoria );
     
 </script>
 

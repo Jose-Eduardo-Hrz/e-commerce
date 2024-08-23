@@ -31,7 +31,6 @@ export const actions = {
 		const idCategoria = data.get('idCategoria');
 		const inversion = data.get('inversion');
 		const idTransaccion = data.get('idTransaccion');
-        console.log( id , imagen , nombre , precio , idCategoria , inversion , idTransaccion );
         return { success: true };
 	}
 };

@@ -11,12 +11,12 @@
 
 <Carrusel />
 
-<div class="contenedor-slogan">
+<div class="contenedor-slogan contenedor_adaptable">
     <div>
-        <p>Todo lo que necesitas con la velocidad que lo necesitas</p>
+        <p style="padding: 15px;">Todo lo que necesitas con la velocidad que lo necesitas</p>
     </div>
     <div>
-        <img src={carrito} alt="" width="300px" />
+        <img src={carrito} alt="" width="300px" style="padding: 10px;" />
     </div>
 </div>
 
