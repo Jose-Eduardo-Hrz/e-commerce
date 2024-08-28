@@ -14,7 +14,10 @@ export async function load() {
             categoria : {
                 select : { nombre : true }
             }
-        }
+        },
+        orderBy : [
+            { fecha : { fecha : "asc" } }
+        ]
     })
 
     const totalVistaCategoria = await prisma.visitaCategoria.aggregate({
@@ -30,7 +33,10 @@ export async function load() {
                 select : { fecha : true }
             },
             vistas : true
-        }
+        },
+        orderBy : [
+            { fecha : { fecha : "asc" } }
+        ]
     })
 
     const totalVisitaGeneral = await prisma.visitaGeneral.aggregate({
@@ -46,7 +52,10 @@ export async function load() {
             producto : { select : { nombre : true } },
             solicitados : true,
             vistas : true
-        }
+        },
+        orderBy : [
+            { fecha : { fecha : "asc" } }
+        ]
     })
 
     return {
